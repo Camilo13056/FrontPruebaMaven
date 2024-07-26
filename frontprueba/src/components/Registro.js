@@ -3,7 +3,8 @@ import '../Styles/StylesRegistro.css';
 import logo from '../logoprueba.png'; 
 import axios from 'axios';
 
-const endpoint = 'http://localhost:3004'
+const endpoint = 'http://localhost:3001';  
+
 const Registro = () => {
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -12,7 +13,7 @@ const Registro = () => {
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => { 
         e.preventDefault();
         try {
             const response = await axios.post(`${endpoint}/users`, {
@@ -82,9 +83,6 @@ const Registro = () => {
                     </form>
                 </div>
             </main>
-            <footer className="footer">
-                <p>© {new Date().getFullYear()} Mi Sitio Web. Todos los derechos reservados.</p>
-            </footer>
         </div>
     );
 };

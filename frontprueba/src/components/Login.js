@@ -3,8 +3,7 @@ import '../Styles/StylesLogin.css';
 import logo from '../logoprueba.png';
 import axios from 'axios';
 
-const endpoint = 'http://localhost:3004/users'; // Cambia el puerto según sea necesario
-
+const endpoint = 'http://localhost:3001'; 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -66,9 +65,7 @@ const Login = () => {
                     </form>
                 </div>
             </main>
-            <footer className="footer">
-                <p>© {new Date().getFullYear()} Mi Sitio Web. Todos los derechos reservados.</p>
-            </footer>
+          
         </div>
     );
 };
