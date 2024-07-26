@@ -1,0 +1,98 @@
+/* Estilos generales */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Estilos del Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e1e1e1;
+}
+
+.navbar-logo img {
+    height: 35px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.navbar-links li {
+    margin: 0;
+}
+
+.navbar-links a {
+    color: rgb(62, 2, 127);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/*login */
+.login-container {
+    width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #c9a3ff;
+    border-radius: 30px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+button {
+    width: 50%;
+    padding: 10px;
+    background-color: #cf6eff;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5e0080;
+}
+
+/* Estilos del Footer */
+.footer {
+    background-color: #e1e1e1;
+    color: rgb(62, 2, 127);
+    padding: 10px;
+    text-align: center;
+    margin-top: 100px;
+}
