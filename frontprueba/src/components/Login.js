@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
-import '../Styles/StylesLogin.css';
-import logo from '../logoprueba.png';
+import React, { useEffect, useState } from 'react';
+import '../Styles/StylesCrud.css'; 
 import axios from 'axios';
+import logo from '../logoprueba.png'; // Asegúrate de que la ruta sea correcta
 
-const endpoint = 'http://localhost:3001'; 
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const CrudUsers = () => {
+    const [users, setUsers] = useState([]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post(`${endpoint}/login`, {
-                email,
-                password
+    useEffect(() => {
+        axios.get('http://localhost:3001/users') 
+            .then(response => {
+                setUsers(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching users:', error);
             });
-            console.log(response.data); // Maneja la respuesta aquí
-            // Redirige al usuario según la respuesta
-        } catch (error) {
-            console.error('Error al iniciar sesión', error);
-        }
-    };
+    }, []);
 
     return (
         <div className="page-container">
@@ -31,43 +25,40 @@ const Login = () => {
                 <ul className="navbar-links">
                     <li><a href='/login'>Inicio de Sesión</a></li>
                     <li><a href='/'>Registro</a></li>
+                    <li><a href='/crud'>Usuarios</a></li> {/* Link para la página de usuarios */}
                 </ul>
             </nav>
             <main className="content">
-                <div className="login-container">
-                    <h2>Inicio de Sesión</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="email">Correo Electrónico</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Contraseña</label>
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                required
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                        <div className="button-container">
-                            <button type="submit">Iniciar Sesión</button>
-                        </div>
-                    </form>
-                </div>
+                <h1>Usuarios Registrados</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(user => (
+                            <tr key={user.id}>
+                                <td>{user.id}</td>
+                                <td>{user.name}</td>
+                                <td>{user.lastName}</td>
+                                <td>{user.email}</td>
+                                <td>{user.address}</td>
+                                <td>{user.phone}</td>
+                                <td>{user.status ? 'Activo' : 'Inactivo'}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </main>
-          
         </div>
     );
 };
 
-export default Login;
+export default CrudUsers;
