@@ -6,14 +6,13 @@ import logo from '../logoprueba.png';
 
 const EditUser = () => {
     const { id } = useParams();
-    /* const [user, setUser] = useState(null);*/
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
-    const [status, setStatus] = useState('');
-    const [role, setRole] = useState('');
+    const [status, setStatus] = useState('Activo');
+    const [role, setRole] = useState('usuario');
     const roles = ['usuario', 'admin', 'superadmin'];
     const estados = ['Activo', 'Inactivo'];
 
@@ -21,17 +20,16 @@ const EditUser = () => {
         axios.get(`http://localhost:3001/users/${id}`)
             .then(response => {
                 const userData = response.data;
-                /* setUser(userData);*/
                 setName(userData.name);
                 setLastName(userData.lastName);
                 setEmail(userData.email);
                 setAddress(userData.address);
                 setPhone(userData.phone);
                 setStatus(userData.status ? 'Activo' : 'Inactivo');
-                setRole(userData.role);
+                setRole(userData.role);  
             })
             .catch(error => {
-                console.error('Error al cargar usuarios:', error);
+                console.error('Error al cargar el usuario:', error);
             });
     }, [id]);
 
@@ -70,9 +68,8 @@ const EditUser = () => {
             </nav>
             <main className="edit-content">
                 <form onSubmit={handleSubmit} className="edit-form">
-                    <div className="form-group-edit">
                     <h1>Editar Usuario</h1>
-
+                    <div className="form-group-edit">
                         <label htmlFor="name">Nombre</label>
                         <input
                             type="text"
