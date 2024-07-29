@@ -1,0 +1,64 @@
+/* Estilos para la vista de edición */
+.edit-page-container {
+    font-family: Arial, sans-serif;
+}
+
+.edit-content {
+    padding: 20px;
+    max-width: 400px; /* Tamaño más compacto */
+    margin: 40px auto; /* Centrando el contenido */
+}
+
+.edit-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.edit-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group-edit {
+    margin-bottom: 15px;
+}
+
+.form-group-edit label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group-edit input,
+.form-group-edit select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #c9a3ff;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.button-save {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #cf6eff;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-save:hover {
+    background-color: #5e0080;
+}
