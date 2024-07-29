@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/StylesCrud.css'; 
 import axios from 'axios';
-import logo from '../logoprueba.png'; // Asegúrate de que la ruta sea correcta
+import logo from '../logoprueba.png'; 
 
 const CrudUsers = () => {
     const [users, setUsers] = useState([]);
@@ -12,7 +12,7 @@ const CrudUsers = () => {
                 setUsers(response.data);
             })
             .catch(error => {
-                console.error('Error fetching users:', error);
+                console.error('Error al obtener usuarios', error);
             });
     }, []);
 
@@ -25,7 +25,7 @@ const CrudUsers = () => {
                 <ul className="navbar-links">
                     <li><a href='/login'>Inicio de Sesión</a></li>
                     <li><a href='/'>Registro</a></li>
-                    <li><a href='/crud'>Usuarios</a></li> {/* Link para la página de usuarios */}
+                    <li><a href='/crud'>Usuarios</a></li>
                 </ul>
             </nav>
             <main className="content">

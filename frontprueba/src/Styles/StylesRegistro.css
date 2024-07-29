@@ -1,4 +1,4 @@
-/* Estilos del Navbar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@
     text-decoration: underline;
 }
 
-/* Estilos específicos para el formulario de registro */
+/* Registro */
 .registro-container {
     width: 400px;
     margin: 40px auto;
@@ -84,7 +84,7 @@ button:hover {
     background-color: #5e0080;
 }
 
-/* Estilos del Footer */
+/* Estilos del Footer 
 .footer1 {
     background-color: #e1e1e1;
     color: rgb(62, 2, 127);
@@ -92,3 +92,4 @@ button:hover {
     text-align: center;
     margin-top: 100px;
 }
+    */

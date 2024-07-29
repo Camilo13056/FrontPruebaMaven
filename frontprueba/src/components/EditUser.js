@@ -6,7 +6,7 @@ import logo from '../logoprueba.png';
 
 const EditUser = () => {
     const { id } = useParams();
-    const [user, setUser] = useState(null);
+    /* const [user, setUser] = useState(null);*/
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -21,7 +21,7 @@ const EditUser = () => {
         axios.get(`http://localhost:3001/users/${id}`)
             .then(response => {
                 const userData = response.data;
-                setUser(userData);
+                /* setUser(userData);*/
                 setName(userData.name);
                 setLastName(userData.lastName);
                 setEmail(userData.email);
@@ -31,7 +31,7 @@ const EditUser = () => {
                 setRole(userData.role);
             })
             .catch(error => {
-                console.error('Error fetching user:', error);
+                console.error('Error al cargar usuarios:', error);
             });
     }, [id]);
 
@@ -53,7 +53,7 @@ const EditUser = () => {
                 window.location.href = '/users';
             })
             .catch(error => {
-                console.error('Error updating user:', error);
+                console.error('Error al actualizar usuario', error);
                 alert('Error al actualizar el usuario');
             });
     };

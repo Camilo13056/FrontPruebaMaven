@@ -25,10 +25,10 @@ const Registro = () => {
                 password
             });
             console.log(response.data);
-            alert('Registro exitoso'); // Puedes cambiar esto según lo que necesites
+            alert('Registro exitoso'); 
         } catch (error) {
             console.error('Error al registrar el usuario', error);
-            alert('Error en el registro'); // Puedes cambiar esto según lo que necesites
+            alert('Error en el registro'); 
         }
     };
 
@@ -84,7 +84,7 @@ const Registro = () => {
                 </div>
             </main>
         </div>
-    );
+    ); 
 };
 
 export default Registro;

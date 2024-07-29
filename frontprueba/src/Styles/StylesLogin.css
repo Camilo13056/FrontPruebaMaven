@@ -1,10 +1,8 @@
-/* Estilos generales */
 html, body {
     height: 100%;
     margin: 0;
 }
 
-/* Estilos del Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -88,7 +86,7 @@ button:hover {
     background-color: #5e0080;
 }
 
-/* Estilos del Footer */
+/* Estilos del Footer 
 .footer {
     background-color: #e1e1e1;
     color: rgb(62, 2, 127);
@@ -96,3 +94,4 @@ button:hover {
     text-align: center;
     margin-top: 100px;
 }
+    */

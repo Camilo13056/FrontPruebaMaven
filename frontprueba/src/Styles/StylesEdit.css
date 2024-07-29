@@ -1,12 +1,11 @@
-/* Estilos para la vista de edición */
 .edit-page-container {
     font-family: Arial, sans-serif;
 }
 
 .edit-content {
     padding: 20px;
-    max-width: 400px; /* Tamaño más compacto */
-    margin: 40px auto; /* Centrando el contenido */
+    max-width: 400px; 
+    margin: 40px auto; 
 }
 
 .edit-content h1 {
