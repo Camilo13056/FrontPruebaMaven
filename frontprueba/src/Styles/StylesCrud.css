@@ -62,7 +62,7 @@ h1 {
 }
 
 .button-editar {
-    background-color: #cf6eff;
+    background-color: #cacaca;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -75,7 +75,7 @@ h1 {
 }
 
 .button-editar:hover {
-    background-color: #5e0080;
+    background-color: #969696;
 }
 
 .button-eliminar {
