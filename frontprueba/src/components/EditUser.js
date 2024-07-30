@@ -12,11 +12,12 @@ const EditUser = () => {
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
     const [status, setStatus] = useState('Activo');
-    const [role, setRole] = useState('usuario');
-    const roles = ['usuario', 'admin', 'superadmin'];
+    const [roleId, setRoleId] = useState(null);
+    const [roles, setRoles] = useState([]);
     const estados = ['Activo', 'Inactivo'];
 
     useEffect(() => {
+        // Cargar los datos del usuario
         axios.get(`http://localhost:3001/users/${id}`)
             .then(response => {
                 const userData = response.data;
@@ -26,10 +27,19 @@ const EditUser = () => {
                 setAddress(userData.address);
                 setPhone(userData.phone);
                 setStatus(userData.status ? 'Activo' : 'Inactivo');
-                setRole(userData.role);  
+                setRoleId(userData.role.id);  
             })
             .catch(error => {
                 console.error('Error al cargar el usuario:', error);
+            });
+
+        // Cargar roles disponibles
+        axios.get('http://localhost:3001/roles') // Asumiendo que tienes un endpoint para obtener todos los roles
+            .then(response => {
+                setRoles(response.data);
+            })
+            .catch(error => {
+                console.error('Error al cargar roles:', error);
             });
     }, [id]);
 
@@ -42,9 +52,9 @@ const EditUser = () => {
             address,
             phone,
             status: status === 'Activo',
-            role
+            role: { id: roleId } // Asegúrate de que el ID del rol se esté enviando correctamente
         };
-
+    
         axios.put(`http://localhost:3001/users/${id}`, updatedUser)
             .then(response => {
                 alert('Usuario actualizado exitosamente');
@@ -138,13 +148,14 @@ const EditUser = () => {
                         <label htmlFor="role">Rol</label>
                         <select
                             id="role"
-                            value={role}
-                            onChange={(e) => setRole(e.target.value)}
+                            value={roleId || ''}
+                            onChange={(e) => setRoleId(parseInt(e.target.value))}
                             required
                         >
+                            <option value="" disabled>Selecciona un rol</option>
                             {roles.map(role => (
-                                <option key={role} value={role}>
-                                    {role.charAt(0).toUpperCase() + role.slice(1)}
+                                <option key={role.id} value={role.id}>
+                                    {role.name.charAt(0).toUpperCase() + role.name.slice(1)}
                                 </option>
                             ))}
                         </select>

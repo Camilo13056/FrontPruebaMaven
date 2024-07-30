@@ -68,7 +68,7 @@ const CrudUsers = () => {
                                 <td>{user.address}</td>
                                 <td>{user.phone}</td>
                                 <td>{user.status ? 'Activo' : 'Inactivo'}</td>
-                                <td>{typeof user.role === 'object' ? user.role.name : user.role}</td> {/* Ajuste aquí */}
+                                <td>{typeof user.role === 'object' ? user.role.name : user.role}</td> 
                                 <td>
                                     <button className="button-editar" onClick={() => handleEdit(user.id)}>Editar</button>
                                     <button className="button-eliminar" onClick={() => handleDelete(user.id)}>Eliminar</button>
