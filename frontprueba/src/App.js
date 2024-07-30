@@ -4,6 +4,7 @@ import Registro from '../src/components/Registro';
 import Login from '../src/components/Login';
 import CrudUsers from '../src/components/CrudUsers';
 import EditUser from '../src/components/EditUser';
+import TaskAssign from './components/TaskAssign';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/users" element={<CrudUsers />} />
         <Route path="/edit-user/:id" element={<EditUser/>} />
+        <Route path="/tasks" element={<TaskAssign/>} />
+
       </Routes>
     </Router>
   );

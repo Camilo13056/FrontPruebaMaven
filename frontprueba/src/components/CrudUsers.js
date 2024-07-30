@@ -65,7 +65,7 @@ const CrudUsers = () => {
         </div>
         <ul className="navbar-links">
         <li>
-            <a href="/crud">Tareas</a>
+            <a href="/tasks">Tareas</a>
           </li>
           <li>
             <a href="/users">Usuarios</a>
