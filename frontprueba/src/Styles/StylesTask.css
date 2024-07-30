@@ -1,0 +1,115 @@
+.task-page-container {
+    /* Define los estilos para el contenedor principal de la página */
+}
+
+.task-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e1e1e1;
+}
+
+.task-navbar-logo img {
+    height: 35px;
+}
+
+.task-navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.task-navbar-links li {
+    margin: 0;
+}
+
+.task-navbar-links a {
+    color: rgb(62, 2, 127);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.task-navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.task-container {
+    width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.task-form-group {
+    margin-bottom: 15px;
+}
+
+.task-form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.task-form-group input, .task-form-group textarea, .task-form-group select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #c9a3ff;
+    border-radius: 30px;
+}
+
+.task-form-group select {
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #333333;
+    border-radius: 20px;
+    width: 100%; 
+
+    
+
+
+}
+
+.task-form-group select::-ms-expand {
+    display: none;
+}
+
+.task-form-group::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333333;
+    pointer-events: none;
+}
+
+.task-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    background-color: #cf6eff;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5e0080;
+}
+

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../Styles/StylesRegistro.css'; 
+import '../Styles/StylesTask.css'; 
 import logo from '../logoprueba.png'; 
 
 const endpoint = 'http://localhost:3001';  
@@ -44,21 +44,21 @@ const TaskAssign = () => {
     };
 
     return (
-        <div className="page-container">
-            <nav className="navbar">
-                <div className="navbar-logo">
+        <div className="task-page-container">
+            <nav className="task-navbar">
+                <div className="task-navbar-logo">
                     <img src={logo} alt="Logo" />
                 </div>
-                <ul className="navbar-links">
+                <ul className="task-navbar-links">
                     <li><a href='/login'>Inicio de Sesión</a></li>
                     <li><a href='/'>Registro</a></li>
                 </ul>
             </nav>
-            <main className="content">
-                <div className="registro-container">
+            <main className="task-content">
+                <div className="task-container">
                     <h2>Asignación de Tareas</h2>
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
+                        <div className="task-form-group">
                             <label htmlFor="user">Usuario</label>
                             <select id="user" name="user" required 
                                     value={selectedUser} 
@@ -71,22 +71,22 @@ const TaskAssign = () => {
                                 ))}
                             </select>
                         </div>
-                        <div className="form-group">
+                        <div className="task-form-group">
                             <label htmlFor="title">Título</label>
                             <input type="text" id="title" name="title" required 
                                    value={title} onChange={(e) => setTitle(e.target.value)} />
                         </div>
-                        <div className="form-group">
+                        <div className="task-form-group">
                             <label htmlFor="description">Descripción</label>
                             <textarea id="description" name="description" required 
                                       value={description} onChange={(e) => setDescription(e.target.value)} />
                         </div>
-                        <div className="form-group">
+                        <div className="task-form-group">
                             <label htmlFor="dueDate">Fecha de Entrega</label>
                             <input type="date" id="dueDate" name="dueDate" required 
                                    value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
                         </div>
-                        <div className="form-group">
+                        <div className="task-form-group">
                             <label htmlFor="status">Estado</label>
                             <select id="status" name="status" required 
                                     value={status} 
@@ -95,7 +95,7 @@ const TaskAssign = () => {
                                 <option value="entregado">Entregado</option>
                             </select>
                         </div>
-                        <div className="button-container">
+                        <div className="task-button-container">
                             <button type="submit">Asignar Tarea</button>
                         </div>
                     </form>
