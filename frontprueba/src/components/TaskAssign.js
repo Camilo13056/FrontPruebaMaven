@@ -17,7 +17,8 @@ const TaskAssign = () => {
         const fetchUsers = async () => {
             try {
                 const response = await axios.get(`${endpoint}/users`);
-                setUsers(response.data);
+                const filteredUsers = response.data.filter(user => user.role.id === 1);
+                setUsers(filteredUsers);
             } catch (error) {
                 console.error('Error al obtener usuarios', error);
             }
