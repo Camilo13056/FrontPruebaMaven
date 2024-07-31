@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../Styles/StylesCrud.css";
 import axios from "axios";
 import logo from "../logoprueba.png";
-import "bootstrap-icons/font/bootstrap-icons.css"; // Importar Bootstrap Icons
+import "bootstrap-icons/font/bootstrap-icons.css"; 
 
 const CrudUsers = () => {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchCriteria, setSearchCriteria] = useState("name"); // 'name' or 'phone'
-
+  const [searchCriteria, setSearchCriteria] = useState("name");
   useEffect(() => {
     axios
       .get("http://localhost:3001/users")
@@ -37,24 +36,21 @@ const CrudUsers = () => {
     window.location.href = `/edit-user/${userId}`;
   };
 
-  // Función para manejar el cambio en el formulario de búsqueda
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Función para manejar el cambio en el criterio de búsqueda
   const handleCriteriaChange = (e) => {
     setSearchCriteria(e.target.value);
   };
 
-  // Filtrar usuarios según el término de búsqueda y el criterio seleccionado
   const filteredUsers = users.filter((user) => {
     if (searchCriteria === "name") {
       return user.name.toLowerCase().includes(searchTerm.toLowerCase());
     } else if (searchCriteria === "phone") {
       return user.phone.toLowerCase().includes(searchTerm.toLowerCase());
     }
-    return true; // Mostrar todos si no hay criterio válido
+    return true; 
   });
 
   return (

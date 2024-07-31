@@ -43,6 +43,13 @@
     box-sizing: border-box;
 }
 
+.form-group-edit textarea {
+    width: calc(100% - 40px);
+    padding: 8px;
+    border: 1px solid #c9a3ff;
+    border-radius: 30px;
+}
+
 .button-save {
     display: block;
     width: 100%;

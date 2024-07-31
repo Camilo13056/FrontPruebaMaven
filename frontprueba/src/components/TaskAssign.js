@@ -38,6 +38,7 @@ const TaskAssign = () => {
             });
             console.log(response.data);
             alert('Tarea asignada exitosamente'); 
+            window.location.href = "/users";
         } catch (error) {
             console.error('Error al asignar la tarea', error);
             alert('Error en la asignación de tarea'); 
