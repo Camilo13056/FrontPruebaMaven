@@ -7,7 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css"; // Importar Bootstrap Icons
 const CrudTasks = () => {
   const [tasks, setTasks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchCriteria, setSearchCriteria] = useState("title"); 
+  const [searchCriteria, setSearchCriteria] = useState("title");
 
   useEffect(() => {
     axios
@@ -54,7 +54,7 @@ const CrudTasks = () => {
         task.user.lastName.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    return true; 
+    return true;
   });
 
   return (

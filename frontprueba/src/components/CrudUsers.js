@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Styles/StylesCrud.css";
 import axios from "axios";
 import logo from "../logoprueba.png";
-import "bootstrap-icons/font/bootstrap-icons.css"; 
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const CrudUsers = () => {
   const [users, setUsers] = useState([]);
@@ -50,7 +50,7 @@ const CrudUsers = () => {
     } else if (searchCriteria === "phone") {
       return user.phone.toLowerCase().includes(searchTerm.toLowerCase());
     }
-    return true; 
+    return true;
   });
 
   return (
@@ -60,7 +60,7 @@ const CrudUsers = () => {
           <img src={logo} alt="Logo" />
         </div>
         <ul className="navbar-links">
-        <li>
+          <li>
             <a href="/tasks">Tareas</a>
           </li>
           <li>

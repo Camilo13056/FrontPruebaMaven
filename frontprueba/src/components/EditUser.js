@@ -17,7 +17,6 @@ const EditUser = () => {
   const estados = ["Activo", "Inactivo"];
 
   useEffect(() => {
-    // Cargar los datos del usuario
     axios
       .get(`http://localhost:3001/users/${id}`)
       .then((response) => {
@@ -34,9 +33,9 @@ const EditUser = () => {
         console.error("Error al cargar el usuario:", error);
       });
 
-    // Cargar roles disponibles
+
     axios
-      .get("http://localhost:3001/roles") // Asumiendo que tienes un endpoint para obtener todos los roles
+      .get("http://localhost:3001/roles") 
       .then((response) => {
         setRoles(response.data);
       })
